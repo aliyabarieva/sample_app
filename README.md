@@ -10,4 +10,4 @@ by [Michael Hartl](http://www.michaelhartl.com/).
 
 Тесты по 3 лабе:
 
-<img src="sample_app\tests3.png" alt="tests_3lab" width="500"/>
+<img src="sample_app/tests3.png" alt="tests_3lab" width="500"/>
