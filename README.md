@@ -9,4 +9,5 @@ by [Michael Hartl](http://www.michaelhartl.com/).
 В этой папке 3 и 4 лабы
 
 Тесты по 3 лабе:
+
 <img src="sample_app\tests3.png" alt="tests_3lab" width="500"/>
