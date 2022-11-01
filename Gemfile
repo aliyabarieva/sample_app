@@ -6,11 +6,13 @@ ruby "2.7.6"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
-gem 'bootstrap-sass', '~> 3.4.1'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sassc-rails'
 gem 'sprockets'
 gem 'rails-controller-testing'
 gem 'bcrypt',               '3.1.18'
+gem 'jquery-rails'
+gem 'turbolinks'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
