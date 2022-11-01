@@ -1,16 +1,24 @@
-# Ruby on Rails Tutorial: sample application
+# README
 
-Это учебное приложение для
-[*Ruby on Rails Tutorial:
-Learn Web Development with Rails*](http://www.railstutorial.org/)
-by [Michael Hartl](http://www.michaelhartl.com/).
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Бариева Алия гр. 4411
-В этой папке 3 и 4 лабы
+Things you may want to cover:
 
-Скрины выполненных тестов и упражнений можно посмотреть по ссылке:
+* Ruby version
 
-https://disk.yandex.ru/d/SquGm3jsso4Alg
+* System dependencies
 
-P.S. прошу не обращать внимание на то, что первые коммиты под другим ником, 
-делала не на своем ноуте сначала, спасибо!) Хорошего дня!
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
