@@ -31416,3 +31416,649 @@ Completed 200 OK in 333ms (Views: 275.2ms | ActiveRecord: 3.5ms | Allocations: 2
   [1m[36mCACHE Micropost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = $1[0m  [["user_id", 762146111]]
   [1m[36mCACHE Micropost Load (0.0ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = $1 ORDER BY "microposts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 762146111], ["LIMIT", 30], ["OFFSET", 0]]
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (3.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "microposts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "relationships" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.2ms)[0m  [1m[31mDELETE FROM "microposts";
+DELETE FROM "relationships";
+DELETE FROM "users";
+INSERT INTO "microposts" ("id", "content", "user_id", "created_at", "updated_at", "picture") VALUES (499495288, 'I just ate an orange!', 762146111, '2022-10-26 13:06:48', '2022-10-26 13:16:50.629773', DEFAULT), (517500819, 'Check out the @tauday site by @mhartl: https://tauday.com', 762146111, '2019-10-26 13:16:48', '2022-10-26 13:16:50.629773', DEFAULT), (12348100, 'Sad cats are sad: https://youtu.be/PKffm2uI4dk', 762146111, '2022-10-26 11:16:48', '2022-10-26 13:16:50.629773', DEFAULT), (941832919, 'Writing a short test', 762146111, '2022-10-26 13:16:48', '2022-10-26 13:16:50.629773', DEFAULT), (177734013, 'Molestias qui nam quas.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (1033843180, 'Omnis beatae quisquam tempore.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (613834836, 'Ducimus quia mollitia enim.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (328290505, 'Dolor minus sint id.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (234210660, 'Neque voluptatum dolor vero.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (989001203, 'Sed ut et quisquam.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (603694155, 'Distinctio deleniti illum temporibus.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (352097504, 'Velit consequuntur dicta quaerat.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (71534927, 'Adipisci aut sit aut.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (860142042, 'Incidunt voluptatem laboriosam sapiente.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (58620899, 'Quae ut voluptas voluptate.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (880364408, 'Ipsa eveniet libero cum.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (762321612, 'Nulla aut cumque voluptates.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (444017243, 'Nostrum dolorum vitae nesciunt.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (68403196, 'Consectetur vitae eum id.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (856985457, 'Dicta et occaecati cupiditate.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (706600661, 'Eos maiores nesciunt eligendi.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (488304196, 'Commodi ut voluptas ut.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (228979669, 'A assumenda amet praesentium.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (983745350, 'Sit neque provident quis.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (676538406, 'Et veniam rerum omnis.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (525605047, 'Officiis similique non impedit.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (106776847, 'Ullam earum ad quasi.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (828012954, 'Sint consequatur tempora incidunt.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (792652861, 'Quia blanditiis voluptatem ratione.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (406445230, 'Pariatur facilis aut facere.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (19959062, 'Libero molestiae praesentium qui.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (909622657, 'Perferendis aut dignissimos ex.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (646488084, 'Sed labore impedit esse.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (294621321, 'Officia quis odio vel.', 762146111, '2022-09-14 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (583546149, 'Oh, is that what you want? Because that''s how you get ants!', 950961012, '2020-10-26 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (552321033, 'Danger zone!', 950961012, '2022-10-23 13:16:50', '2022-10-26 13:16:50.629773', DEFAULT), (3454773, 'I''m sorry. Your words made sense, but your sarcastic tone did not.', 409608538, '2022-10-26 13:06:50', '2022-10-26 13:16:50.629773', DEFAULT), (970054474, 'Dude, this van''s, like, rolling probable cause.', 409608538, '2022-10-26 09:16:50', '2022-10-26 13:16:50.629773', DEFAULT);
+INSERT INTO "users" ("id", "name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES (762146111, 'Michael Example', 'michael@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$jzX6qHk/9AuCyBhaH/zuOOWXydA8LSPwphVhZoCJGZgUUgow.F2vG', DEFAULT, TRUE, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (950961012, 'Sterling Archer', 'duchess@example.gov', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$bwMdIr2FzowNMAOy2ilBqeHlrZOfCqKvMY6BVDkxUpjqGrtGtW8dW', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (409608538, 'Lana Kane', 'hands@example.gov', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$AGB5sbVw/H2wYZNIT/7f1u8.ODsQV46js6YA2go.Aq9NkTUScj4na', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (659682706, 'Malory Archer', 'boss@example.gov', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$//9EzQu/5mpO1riSA7sFV.HdeDup4xS0Gbd.AFnysOs9lb9N7INHC', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (338193910, 'User 0', 'user-0@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$ddZsup26NtsJIGb0k8c/lu79hESfFrxpRaD4vv8v1fP9KNUgWjwTK', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (590306657, 'User 1', 'user-1@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$HvwWC6rJ37zT3oL.J9AUwewFo8/9TReDt2CdYQ17030H/OrKlG0NC', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (975572189, 'User 2', 'user-2@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$e.ylNSyn.C2/p.K9alMOO.UpT9bF5gsxidjCUXolO1jz7GY2Wtw22', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (220281934, 'User 3', 'user-3@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$Sh6P3Mz6acmfF/RwA3/nFu5HULEKCzHpmp/VXWlObYUfcCPF1PIO2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (323332591, 'User 4', 'user-4@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$IIwJhQNXdijWU85DkRWCUuH0aqrgskOyJURhCi5khiylBC4xH9fGq', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (608344442, 'User 5', 'user-5@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$pZWmrkmA8BLtBIEj8TRUKO/e.y8iV80/s97ch7t66l4ZYeTGxf9Xq', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (1028376774, 'User 6', 'user-6@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$i/jQAqUWgsoJpKxrH02CyeMIUpUFI4ei7JUnjkCgho4wbN8HWvz7m', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (172816471, 'User 7', 'user-7@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$XdpM73m.oXpiBpH.ELmX0u2VpPgsO2e2aFvHjk9T1lvBHP2KeNcIG', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (452191684, 'User 8', 'user-8@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$nbQmd12mTl7PVsHqcBbzUeWwOstK/LMwRH2h2pHz6faVVw1M.CVfG', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (771020115, 'User 9', 'user-9@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$IpB9mMhU9T4U1rq6bmr53OKNjZTPbydlaKaTe5CGWWJm6/nobmMx2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (956993830, 'User 10', 'user-10@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$bfXs5zDFu.jMtC9DewbRR.nYFUw7.j7v6YarRW.iNJKj9q2OkNtYS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (235774389, 'User 11', 'user-11@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$AOQp8oisvo1GsoilP1yn7Ol/kFC4E9x4DGuHcLzZcSoCdKKEdCeM6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (386199561, 'User 12', 'user-12@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$qxBKMmXCZUWKmPcyunHlxOL9OU4LtJoNTsIMxpOuixc2K7jfhOKuO', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (537116830, 'User 13', 'user-13@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$hoMtwGB/gArpbhAx1.vD5O4TokHE.KVcU8mbc8/gqIsZy5lh4dEiO', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (1046959423, 'User 14', 'user-14@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$zjzjez9.O3vce7hVyTi/ZOQUGPziHSoEotJLXHjEIDzlAjro/DDhW', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (157312430, 'User 15', 'user-15@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$UURjLg//KB7bF.u224fxtOYI3cweuUoVTMBa8LQLLtXTCB9e5Qqu6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (275330066, 'User 16', 'user-16@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$gaJ0ErcfsmLQ.GezpZ/7LeAsO5AM4T38wZ3MjCjWpzBMaEEs8tpbK', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (661521543, 'User 17', 'user-17@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$bGaubB3TGDR6cf/zjNQtVu8bDdpFATsjQoLjpx4FBNhIU1eoEzct.', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (936450328, 'User 18', 'user-18@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$jYQ5bIAsGp1y2uX6JMtuqOOyUYrecQCJAEHD1mT0U4nXJgVmD3RkS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (14035331, 'User 19', 'user-19@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$pJV7Jhx/Gye0b/u9UjEsg.HhtwrjASbcUwHWVbXdlYPpoHSYIWE7a', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (304595689, 'User 20', 'user-20@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$yABGEXpdfPMKkkGV4l/IHOGBdr4jmIMK1xAnILcgr0uhhh/poF7l.', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (622916212, 'User 21', 'user-21@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$R/Bdk9lFYZLZYnY1h97eL.ZoUK75ryaZ5SrmD6pGE2F26S4PzAQt.', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (1009361868, 'User 22', 'user-22@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$vKxqt8.zp5FoatQMBDW4YuoTlN3A7iY5vmLGKhCBjv2dI3qJ3W/MS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (187601757, 'User 23', 'user-23@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$rXA0AjwcaZQkwch/DK/53eMKFyez4MRtTBEUI5HNsMNEi0PIT5Oca', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (357172992, 'User 24', 'user-24@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$BKWwbNWCZFru0uRD3RyXgORm6zt8.ZP2QpnDdk8t1LU8fs/HcKqCS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (575485547, 'User 25', 'user-25@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$QWWttLXfBvTDdWOTI7JoueyBCpFUZ3qS2ZT/Mueb454wDyLcWCN6m', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (994338771, 'User 26', 'user-26@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$HCrk0EiMUIRSpM2sWZ.jkOd2Dss4RrzWn4m.S1CgVlIpaDaZpBW5W', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (205739844, 'User 27', 'user-27@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$TpbXj.2s5bulbLXwlgrvnONbhuhZ6aHGfA6wwv.BffX94AKa4U1i2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (486296279, 'User 28', 'user-28@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$JE..wth2fLU86JVzPK93UeMwjTuf3bRGODvhCOOLIA/DJILpI.krG', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT), (737901126, 'User 29', 'user-29@example.com', '2022-10-26 13:16:50.652660', '2022-10-26 13:16:50.652660', '$2a$04$dlQfZstLOk7hjIuca/D5B.udZ6fqMhmH3Kz.OtlyFzT/4cr0gWGOa', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:16:50', DEFAULT, DEFAULT)[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "microposts" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" ENABLE TRIGGER ALL;ALTER TABLE "relationships" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (65.9ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+UserTest: test_associated_microposts_should_be_destroyed
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2022-10-26 13:16:51.027796"], ["updated_at", "2022-10-26 13:16:51.027796"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", false], ["activation_digest", "$2a$04$qrGq.VDyXdCOUYNJ/1furOFp3KdOP8q84M0o/IVjlguDYsruaI5Qe"], ["activated", false], ["activated_at", nil], ["reset_digest", nil], ["reset_sent_at", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------
+UserTest: test_authenticated?_should_return_false_for_a_user_with_nil_digest
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2022-10-26 13:16:51.645853"], ["updated_at", "2022-10-26 13:16:51.645853"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", false], ["activation_digest", "$2a$04$xZ7kAJkgdGfYJBzLNAMqduquqXS3wSy8wt5MZakdG74JQDms/Pf8O"], ["activated", false], ["activated_at", nil], ["reset_digest", nil], ["reset_sent_at", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "     "], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RelationshipTest: test_should_require_a_follower_id
+---------------------------------------------------
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RelationshipTest: test_should_require_a_followed_id
+---------------------------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+RelationshipTest: test_should_be_valid
+--------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (3.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "microposts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "relationships" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.3ms)[0m  [1m[31mDELETE FROM "microposts";
+DELETE FROM "relationships";
+DELETE FROM "users";
+INSERT INTO "microposts" ("id", "content", "user_id", "created_at", "updated_at", "picture") VALUES (499495288, 'I just ate an orange!', 762146111, '2022-10-26 13:07:49', '2022-10-26 13:17:52.134942', DEFAULT), (517500819, 'Check out the @tauday site by @mhartl: https://tauday.com', 762146111, '2019-10-26 13:17:49', '2022-10-26 13:17:52.134942', DEFAULT), (12348100, 'Sad cats are sad: https://youtu.be/PKffm2uI4dk', 762146111, '2022-10-26 11:17:49', '2022-10-26 13:17:52.134942', DEFAULT), (941832919, 'Writing a short test', 762146111, '2022-10-26 13:17:49', '2022-10-26 13:17:52.134942', DEFAULT), (177734013, 'Aut similique rerum iste.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (1033843180, 'Quod velit voluptatum impedit.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (613834836, 'Porro alias libero eius.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (328290505, 'Voluptatum non deserunt ut.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (234210660, 'Molestiae excepturi esse voluptatem.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (989001203, 'Et voluptatem rerum est.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (603694155, 'Sit excepturi quo tempore.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (352097504, 'Cumque sed non corporis.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (71534927, 'Est voluptatem dolor enim.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (860142042, 'Dolorem repellat hic quia.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (58620899, 'Sint velit delectus molestias.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (880364408, 'Sint assumenda non accusamus.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (762321612, 'Ut totam est aut.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (444017243, 'Eveniet nostrum velit repellendus.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (68403196, 'Nihil ipsam minus ut.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (856985457, 'Qui aut tempore voluptas.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (706600661, 'Debitis eum cum labore.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (488304196, 'Sed quo doloribus minima.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (228979669, 'Esse sint doloremque laboriosam.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (983745350, 'Incidunt est ea quos.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (676538406, 'Eaque quisquam qui in.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (525605047, 'Consequatur reiciendis sint delectus.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (106776847, 'Quidem distinctio id eligendi.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (828012954, 'Ullam rem dolorem voluptates.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (792652861, 'Voluptatem sit minima dolor.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (406445230, 'Ipsam laborum rem et.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (19959062, 'Et quod optio quae.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (909622657, 'Blanditiis aut ad sint.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (646488084, 'Aut nam reiciendis ipsam.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (294621321, 'Atque mollitia eligendi qui.', 762146111, '2022-09-14 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (583546149, 'Oh, is that what you want? Because that''s how you get ants!', 950961012, '2020-10-26 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (552321033, 'Danger zone!', 950961012, '2022-10-23 13:17:51', '2022-10-26 13:17:52.134942', DEFAULT), (3454773, 'I''m sorry. Your words made sense, but your sarcastic tone did not.', 409608538, '2022-10-26 13:07:51', '2022-10-26 13:17:52.134942', DEFAULT), (970054474, 'Dude, this van''s, like, rolling probable cause.', 409608538, '2022-10-26 09:17:51', '2022-10-26 13:17:52.134942', DEFAULT);
+INSERT INTO "users" ("id", "name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES (762146111, 'Michael Example', 'michael@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$VlyNw1odjt3KmMKqheAro.wVrv7RUXA2TiRZjKmmzB4l7YZsop40m', DEFAULT, TRUE, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (950961012, 'Sterling Archer', 'duchess@example.gov', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$PPAMb4O2fKu9z11/Ejkz7O1014YqroyqfiPOKBzTiqbt8o/RwVmHS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (409608538, 'Lana Kane', 'hands@example.gov', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$4OSxMWhkbyNQicoeSOwDJ.dwkx05V8dWIN//iBv1FBf4NaeNpAa9u', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (659682706, 'Malory Archer', 'boss@example.gov', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$883NXVZquh8/SbIsWWQix.DZND5YtC8WjOIupHoq6rBPMKjPsZcEC', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (338193910, 'User 0', 'user-0@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$ZeSSgb.fkPK0GvqdR/3soOET5fRDV1EfWvLrUjqFroulndLZV7ndC', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (590306657, 'User 1', 'user-1@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$FVGSw4dcqQluTmP.QryWbuqiWH4jti8EXPw0cyduIsm8joncl5Jry', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (975572189, 'User 2', 'user-2@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$n3gz8ZV5nEZi6ismQwXr9usTtOrR62sH08chsN0JscBE3uduLdxrW', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (220281934, 'User 3', 'user-3@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$k8KKGlE1GsEKrJ45Cr4ASORtCGIFl3XjYlW7X2L4UM2eSeivq5bo6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (323332591, 'User 4', 'user-4@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$PkE.4GV3HYq9Wdo2JGG/QeT/TohD6T7aN28gs5X775Asbmr4Xl30m', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (608344442, 'User 5', 'user-5@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$oCbV3yVe4enryrjF/DThiOGGI9l20t/Vqe66LVmMaN7O0y.KR2R/e', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (1028376774, 'User 6', 'user-6@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$nbeufytpPKBeWfUmwySc3.xTecwyP/1Qmamcxpeg5yLfbwIpFTnt2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (172816471, 'User 7', 'user-7@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$xJ4rBdntEu0Jw569eVWiVuwYD5oPri68hZK24.bNJD4DIV5goHr8q', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (452191684, 'User 8', 'user-8@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$53Grl1VGGYmaQHOIS5hZW.ohytCxr3yjlUQHaR3i/dQC/VAixF0y2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (771020115, 'User 9', 'user-9@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$JLdJpR/gQDCMHNtucnQkOezy47Ai.D/C.FMDmwYagAkVRrXvCwXrS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (956993830, 'User 10', 'user-10@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$13zekGQ.HDfUFqjQkncL7ezp4cWZaIZOQ9gkyx.siHgkoJmKQvUSS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (235774389, 'User 11', 'user-11@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$uGvKKOejjEM97U/E49s1B.v6bUGx3mlHlouRfGnFTtbWHKvTtlvQ2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (386199561, 'User 12', 'user-12@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$Yk2C7Y2geph/KU0teJm5HucSLZQEXlMI7bJ6Nr0iYlNlfMIb5AJKi', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (537116830, 'User 13', 'user-13@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$3X8Jaj0RdZD2NV9onIIS.Oznzy0cdbJLz0l7F4v5chSDgELEXw.0W', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (1046959423, 'User 14', 'user-14@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$tPYRFk14XpPzuoeAhg086OoHzuV61VEILBMvnhUckFAyeIBpF/z8i', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (157312430, 'User 15', 'user-15@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$toyNEbPtv4x9pgWY95kyqOESedv083qIlnggXP2vab7y4J63jxc4e', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (275330066, 'User 16', 'user-16@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$K.rE/D26aApw/LAwPFBBYOI91dlc2At77JEk5XKWG8pfvjZNoJneS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (661521543, 'User 17', 'user-17@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$/3ZsOE5F0.Ir4aZiuY5nbeH0HxnP2VS/wfp11LSYKdgwsg9n.BeXS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (936450328, 'User 18', 'user-18@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$xXihwqS9lLfK/2MYNtJEm.i89vWYkIbq..d70lu13TJJuHGH5YdH2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (14035331, 'User 19', 'user-19@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$iW1ynaToFKGwusfa40/TxuGi8FvvQDZRnCEY4oDxy7aYF/11gGTEK', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (304595689, 'User 20', 'user-20@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$GegYgNlAKHZm342aCv4A8u6975UxMhJozOxV0kJMqIUiHSHXGANw6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (622916212, 'User 21', 'user-21@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$VlUkV0dQaKu3tSRv8/lLSegrt6fSze1YDiIqlOvS9OKd4U4huq01y', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (1009361868, 'User 22', 'user-22@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$aCoR/NJCqLMCtyUsVjxQuONjXW/4NATLmKwSTqjggwIwE.hcw6dym', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (187601757, 'User 23', 'user-23@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$uYmB.VzylV4p2mQh8VaEE.73H3btTq9FWohUMVhSr0msy9i8YXSnm', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (357172992, 'User 24', 'user-24@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$Lhux7H3BOWmOHmyXxkTPJ.9t5Z8ED1TLcluZiB.6qkgHH1G3pnn5G', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (575485547, 'User 25', 'user-25@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$6Y3bIfjAlu90jhk7BSFACeacV4DLY1sCdX06aEjz8sEhi7EfpXeUu', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (994338771, 'User 26', 'user-26@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$V7X1Eh/SA1H8AnKUCVLUzO0eFuOm2Axr0NEE9UkJ/CvIPISHeMTri', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (205739844, 'User 27', 'user-27@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$lEbGO.XmCcfFHTthuWpIiO/F26SCJe32ZxOgv4OGEDV8iKF24DJce', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (486296279, 'User 28', 'user-28@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$exNQDuP1MGQrlddwLiluDOBvpBLl5QElAeLsnyHSDpGDVxvkuy.ny', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT), (737901126, 'User 29', 'user-29@example.com', '2022-10-26 13:17:52.152531', '2022-10-26 13:17:52.152531', '$2a$04$wGpgL.kZ5Ngqiv7KwgweXuMgtNpOB3nkaATkCRARSgIMS7MwsK8Ja', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:17:52', DEFAULT, DEFAULT)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "microposts" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" ENABLE TRIGGER ALL;ALTER TABLE "relationships" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.1ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "     "], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------
+UserTest: test_authenticated?_should_return_false_for_a_user_with_nil_digest
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2022-10-26 13:17:52.562984"], ["updated_at", "2022-10-26 13:17:52.562984"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", false], ["activation_digest", "$2a$04$cXl6yPbzr9Vi16/8JGD5MuorPsA90DvdlXJqP9ZTHOLibvFCioske"], ["activated", false], ["activated_at", nil], ["reset_digest", nil], ["reset_sent_at", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+RelationshipTest: test_should_be_valid
+--------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RelationshipTest: test_should_require_a_followed_id
+---------------------------------------------------
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RelationshipTest: test_should_require_a_follower_id
+---------------------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (3.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "microposts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "relationships" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.9ms)[0m  [1m[31mDELETE FROM "microposts";
+DELETE FROM "relationships";
+DELETE FROM "users";
+INSERT INTO "microposts" ("id", "content", "user_id", "created_at", "updated_at", "picture") VALUES (499495288, 'I just ate an orange!', 762146111, '2022-10-26 13:09:14', '2022-10-26 13:19:16.652288', DEFAULT), (517500819, 'Check out the @tauday site by @mhartl: https://tauday.com', 762146111, '2019-10-26 13:19:14', '2022-10-26 13:19:16.652288', DEFAULT), (12348100, 'Sad cats are sad: https://youtu.be/PKffm2uI4dk', 762146111, '2022-10-26 11:19:14', '2022-10-26 13:19:16.652288', DEFAULT), (941832919, 'Writing a short test', 762146111, '2022-10-26 13:19:14', '2022-10-26 13:19:16.652288', DEFAULT), (177734013, 'Omnis unde laboriosam nobis.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (1033843180, 'Tempore quis nesciunt fugiat.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (613834836, 'Aut voluptates voluptatem laudantium.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (328290505, 'Animi alias quo accusamus.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (234210660, 'Similique placeat dolorum veniam.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (989001203, 'Suscipit fuga totam omnis.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (603694155, 'Nihil non quod id.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (352097504, 'Assumenda inventore quia voluptates.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (71534927, 'Dolor magnam aliquam sed.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (860142042, 'Vel eos neque explicabo.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (58620899, 'Itaque deleniti sapiente ipsa.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (880364408, 'Doloremque optio magni sunt.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (762321612, 'Aut porro ipsum nemo.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (444017243, 'Quam rerum quaerat voluptatem.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (68403196, 'Voluptatem nisi recusandae commodi.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (856985457, 'Velit consequuntur maxime nostrum.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (706600661, 'Velit hic incidunt consectetur.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (488304196, 'Doloremque animi consequatur accusamus.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (228979669, 'Architecto deserunt ipsa rem.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (983745350, 'Minus velit vitae iusto.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (676538406, 'Quasi quibusdam saepe nostrum.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (525605047, 'Dolor commodi deserunt molestias.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (106776847, 'Natus quis consequuntur ea.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (828012954, 'Cumque tempore assumenda sequi.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (792652861, 'Reiciendis velit rerum laudantium.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (406445230, 'Non eveniet quae dicta.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (19959062, 'Deserunt iure animi dicta.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (909622657, 'Ut qui sit sed.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (646488084, 'Est eaque commodi est.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (294621321, 'Iste nulla quod dolor.', 762146111, '2022-09-14 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (583546149, 'Oh, is that what you want? Because that''s how you get ants!', 950961012, '2020-10-26 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (552321033, 'Danger zone!', 950961012, '2022-10-23 13:19:16', '2022-10-26 13:19:16.652288', DEFAULT), (3454773, 'I''m sorry. Your words made sense, but your sarcastic tone did not.', 409608538, '2022-10-26 13:09:16', '2022-10-26 13:19:16.652288', DEFAULT), (970054474, 'Dude, this van''s, like, rolling probable cause.', 409608538, '2022-10-26 09:19:16', '2022-10-26 13:19:16.652288', DEFAULT);
+INSERT INTO "users" ("id", "name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES (762146111, 'Michael Example', 'michael@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$6RuyVyUY53mhoKmkB42Fm.nkRIoGHnAWaO2SzLvka6chGnXzCCP0m', DEFAULT, TRUE, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (950961012, 'Sterling Archer', 'duchess@example.gov', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$LTRdgHiCGn4EWWa.EGk5DeLJXATdxyZ3dTmcuVk/9I2.M3v/qqyYe', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (409608538, 'Lana Kane', 'hands@example.gov', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$Wke3zJlYE099mEl83I/ukuUJDhWVWwv5M4mZnjrvjGpRYTYZ3S1l6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (659682706, 'Malory Archer', 'boss@example.gov', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$GX.yh49yYyluHYYtXOpFDugOuBVw5KGJ0awQLfZmWIr/JOshH8Vki', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (338193910, 'User 0', 'user-0@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$Il/4ODlC4ZBjWxjecQBJyOUDXGhtoM.nnbFGpSGyjkS3PKTk8xVje', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (590306657, 'User 1', 'user-1@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$Jx0ioPNDvM8aove3BVYgCuvf6sU1pBNblAXGqesonF8.sR3ar9oKu', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (975572189, 'User 2', 'user-2@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$.6U2Vzu1jsrn7SLgLi2KFeC5hRiOseKy9py1Wn57XGJjTHorxl2ry', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (220281934, 'User 3', 'user-3@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$sZZdQLyZxjdE.XapakhNye4TLIN3FiXhSnF25wBm124yQcYgnL6pe', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (323332591, 'User 4', 'user-4@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$5U.TV9xvU6zaFTUZTgb1yOD2vdYDSBKySSPiiytQxDac/0q09JMqS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (608344442, 'User 5', 'user-5@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$xMQ57ENiD8LWbS.5ibHGx.EsHbI5BZW91ZWRqZADSJlsezOPfntFK', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (1028376774, 'User 6', 'user-6@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$72JwbBrbwsSxPcLqZrY2v.v4yQRWsgJqg94KgYi86dCWKE.rEUjVe', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (172816471, 'User 7', 'user-7@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$S.X27Mdsy/J7HhlCCsrzSOvWUXP.kb0HmRM5Y2hsE.iCOMk3iTtpS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (452191684, 'User 8', 'user-8@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$9E7BtxYx4SDjxcVdYBiylOWaeCNGAZIY9ZnFHrfZsmM20I/27iAcC', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (771020115, 'User 9', 'user-9@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$XPB9pr8nqMTzT/P/BtPLIOsTnJ3P.TjBOOJmJULOmoX80v.n67EiS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (956993830, 'User 10', 'user-10@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$H7bAeZVRjyN2fweCTwflGeJEwxVyk7YnDc3kAmLnZULhldI8E5PC2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (235774389, 'User 11', 'user-11@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$7p7nD0RH8EtgBur195biS.aZJMETYcZkcF8MHs/F0CbAdEQ9bYq.C', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (386199561, 'User 12', 'user-12@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$PqmY8ZehwHNF1So92P.V9u5ySZ9Wn9eSzsX7WmQZPRlsPUwhZvUzu', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (537116830, 'User 13', 'user-13@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$G9SZiaf1LjcAUqpSUwEUcOjfphCnKO11eo1YIU/DJlW8lp1VsJ66a', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (1046959423, 'User 14', 'user-14@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$rVS2tvL4aKyH15P3QfkIyeuFeCIewdkyX0GhWHssXMup0Jq711D/G', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (157312430, 'User 15', 'user-15@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$W8VOKQDpoM10P2BTJZS2q.lxA.BmF/nBdobJwLx2PAlDJT5kVbcyG', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (275330066, 'User 16', 'user-16@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$m5eaKowi45FLg863lzwe.eAHAAmmIPPajRHniRC8983S6m73BX5q6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (661521543, 'User 17', 'user-17@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$gG4aZD8JbxMvjMsbwSjCKOmTG7XctMovTWc8kyOD4bn2O/f5AWQlO', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (936450328, 'User 18', 'user-18@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$MgDXbjRpy/7MntF5HsTqmebYTA3rTpbrvmigzIWVXLQ9u0EdobPza', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (14035331, 'User 19', 'user-19@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$eDUkqT4ozg78X.I/ph8DUe9OD/QYyX7c9UJZHhokHBlWPUGcALXWu', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (304595689, 'User 20', 'user-20@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$EZ0mTGlaRBxa5a3txQfq3edMvHCBncCg0/olhEtM7TyJoDRZzNCpu', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (622916212, 'User 21', 'user-21@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$33EMKFW.X8oRi7J0edNTW.TRFruOeCUxSAUCCRSl1NUbbtMjad0ES', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (1009361868, 'User 22', 'user-22@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$fi1fHGoGAtRMlWgFuXeoW..sVDhiz/ObYZ2ND2vVA7JImKfo6D9xG', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (187601757, 'User 23', 'user-23@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$RPhSt/F50nizlWDJd4t/l.zZbX9lWDampoH.xgAq/1jCbLiin0jgy', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (357172992, 'User 24', 'user-24@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$c8gVjy33L/s4IkC2G/YZAuBEarqa7OCmMCk1e8GV49Er9K9F1srEO', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (575485547, 'User 25', 'user-25@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$Oxag1le4zgwfsbiUIWV8iOV8ThCFfFAb3WO1zDlLqtWTq6a9PDoZy', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (994338771, 'User 26', 'user-26@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$yVK31ZHRTAnck7XJQ0LYweMUoM7DmlFQmaS79lOxezmpt6X4sRUwS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (205739844, 'User 27', 'user-27@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$yGSlE3SWNkwyRI4VNh88rujIaBQvmd2PW5YzwNasoET4JO/b4DTQG', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (486296279, 'User 28', 'user-28@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$q3tcr2DiivF8Q/AUsYbEA.k0i086vzpPqT/cmCH6dg/7KlxTscMOy', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT), (737901126, 'User 29', 'user-29@example.com', '2022-10-26 13:19:16.670221', '2022-10-26 13:19:16.670221', '$2a$04$m3qhAShu3MZeuR49RD7cTuM03lmsTIv0OkaE3NpNucxSW1oL3Ok3y', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:19:16', DEFAULT, DEFAULT)[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "microposts" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" ENABLE TRIGGER ALL;ALTER TABLE "relationships" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (38.6ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2022-10-26 13:19:16.990033"], ["updated_at", "2022-10-26 13:19:16.990033"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", false], ["activation_digest", "$2a$04$.nT93ZZVD0zeeA.WbGhMweb53Rb2x8srkt5/R56VIriGnYdC2aC2q"], ["activated", false], ["activated_at", nil], ["reset_digest", nil], ["reset_sent_at", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "     "], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------
+UserTest: test_authenticated?_should_return_false_for_a_user_with_nil_digest
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RelationshipTest: test_should_require_a_follower_id
+---------------------------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RelationshipTest: test_should_require_a_followed_id
+---------------------------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "microposts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "relationships" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.1ms)[0m  [1m[31mDELETE FROM "microposts";
+DELETE FROM "relationships";
+DELETE FROM "users";
+INSERT INTO "microposts" ("id", "content", "user_id", "created_at", "updated_at", "picture") VALUES (499495288, 'I just ate an orange!', 762146111, '2022-10-26 13:11:41', '2022-10-26 13:21:43.336355', DEFAULT), (517500819, 'Check out the @tauday site by @mhartl: https://tauday.com', 762146111, '2019-10-26 13:21:41', '2022-10-26 13:21:43.336355', DEFAULT), (12348100, 'Sad cats are sad: https://youtu.be/PKffm2uI4dk', 762146111, '2022-10-26 11:21:41', '2022-10-26 13:21:43.336355', DEFAULT), (941832919, 'Writing a short test', 762146111, '2022-10-26 13:21:41', '2022-10-26 13:21:43.336355', DEFAULT), (177734013, 'Magnam facilis nostrum a.', 762146111, '2022-09-14 13:21:42', '2022-10-26 13:21:43.336355', DEFAULT), (1033843180, 'Voluptatem dolores exercitationem omnis.', 762146111, '2022-09-14 13:21:42', '2022-10-26 13:21:43.336355', DEFAULT), (613834836, 'Neque velit minus et.', 762146111, '2022-09-14 13:21:42', '2022-10-26 13:21:43.336355', DEFAULT), (328290505, 'Adipisci aliquid neque assumenda.', 762146111, '2022-09-14 13:21:42', '2022-10-26 13:21:43.336355', DEFAULT), (234210660, 'Repellendus possimus deleniti at.', 762146111, '2022-09-14 13:21:42', '2022-10-26 13:21:43.336355', DEFAULT), (989001203, 'Reiciendis aliquam a et.', 762146111, '2022-09-14 13:21:42', '2022-10-26 13:21:43.336355', DEFAULT), (603694155, 'Esse iure est repellendus.', 762146111, '2022-09-14 13:21:42', '2022-10-26 13:21:43.336355', DEFAULT), (352097504, 'Aliquam quas placeat aut.', 762146111, '2022-09-14 13:21:42', '2022-10-26 13:21:43.336355', DEFAULT), (71534927, 'Quaerat facere eveniet enim.', 762146111, '2022-09-14 13:21:42', '2022-10-26 13:21:43.336355', DEFAULT), (860142042, 'Numquam corporis repellat culpa.', 762146111, '2022-09-14 13:21:42', '2022-10-26 13:21:43.336355', DEFAULT), (58620899, 'Nam perferendis est sed.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (880364408, 'Doloremque debitis adipisci quis.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (762321612, 'Dolorem optio omnis dicta.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (444017243, 'Labore minima quae hic.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (68403196, 'Consequatur blanditiis deserunt doloribus.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (856985457, 'Cupiditate facere ratione blanditiis.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (706600661, 'Omnis nam cum cupiditate.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (488304196, 'Incidunt doloribus esse natus.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (228979669, 'Rerum qui occaecati est.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (983745350, 'Ad aut omnis voluptas.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (676538406, 'Vel ut at quasi.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (525605047, 'In amet quas quis.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (106776847, 'Dignissimos nemo mollitia natus.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (828012954, 'Sunt et exercitationem ipsum.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (792652861, 'Dolor et sapiente consequuntur.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (406445230, 'Expedita rerum delectus aut.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (19959062, 'Sunt nulla ut non.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (909622657, 'Excepturi deserunt molestias quae.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (646488084, 'Impedit ex eos quia.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (294621321, 'Totam velit laboriosam error.', 762146111, '2022-09-14 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (583546149, 'Oh, is that what you want? Because that''s how you get ants!', 950961012, '2020-10-26 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (552321033, 'Danger zone!', 950961012, '2022-10-23 13:21:43', '2022-10-26 13:21:43.336355', DEFAULT), (3454773, 'I''m sorry. Your words made sense, but your sarcastic tone did not.', 409608538, '2022-10-26 13:11:43', '2022-10-26 13:21:43.336355', DEFAULT), (970054474, 'Dude, this van''s, like, rolling probable cause.', 409608538, '2022-10-26 09:21:43', '2022-10-26 13:21:43.336355', DEFAULT);
+INSERT INTO "users" ("id", "name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES (762146111, 'Michael Example', 'michael@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$v9sUrx8FLwPoAxJ5xaBoKepWKnKX2hQRuKTeyoVfXOC2rfe4Ch43e', DEFAULT, TRUE, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (950961012, 'Sterling Archer', 'duchess@example.gov', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$Z3txx0db01Zx1EWsXgFFPORTmW/T9QxwcofWVcmqB/mN7qINUk.yq', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (409608538, 'Lana Kane', 'hands@example.gov', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$gEyAs9Mzj5.eLezRcWJLbuC4cjbXGmmrrhxadYSG/H90Yy/7THXKy', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (659682706, 'Malory Archer', 'boss@example.gov', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$UiggbaWzMwXRxoQ6OD7g8OzYF13zc9i/abs2DYHSpl2VA/C0AmOvK', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (338193910, 'User 0', 'user-0@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$0Fb5utS.v4x4kz54ZGjjFuHXTt1DX7sNl4vGWe1nEXFEYziQMlBSa', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (590306657, 'User 1', 'user-1@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$spmfd8cowOBQKezZdqrJXudC.O5hwW0czu/N8h58s9Lzn5fXYwgPe', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (975572189, 'User 2', 'user-2@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$KXpo55NNDVteL9Bn8ce88Ocef9hFNmMKDNspjVTvIolGRr4JLNRdS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (220281934, 'User 3', 'user-3@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$fM.VXotehm1.E9S5QNZvD.F09WV6dwNI3I64tbYlHxsKVPLojbUXG', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (323332591, 'User 4', 'user-4@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$nVCST11qxvahkuwGt8qKguHKCTb1pJDffDwbBEsLZQj5CyhOdrJcS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (608344442, 'User 5', 'user-5@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$t5ihTHYMgIdcO75h/WkSi..qVfmgDUlEToQ899qVxv.5G2.iolxDS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (1028376774, 'User 6', 'user-6@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$iJFdR31Trnxu9eKlWXhV0.4AiCLfU/4CUhqUzoJ4PDHFBtGQZ9Vsa', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (172816471, 'User 7', 'user-7@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$f76Qw96BIibHyPsqiD1br.YbkibtbHy/9AnHI6q7HEICblwD1Je.K', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (452191684, 'User 8', 'user-8@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$4azfavHs4hlQaYi9cEPul.hFsUPrIEAGQhTM.P8XxGHqX63Onx2/e', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (771020115, 'User 9', 'user-9@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$K8odxXZAN2Deh.LYkwKxK.Vt/QxyhqbvyrRoMO1HOdFv..bE4kK5a', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (956993830, 'User 10', 'user-10@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$VSuT.n3juZzUB8Z.iYer/Oi3cHK.oCsUA5SdaEc2iBevpSCo8/7Vu', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (235774389, 'User 11', 'user-11@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$mgKD6OCBBRPlWTwCpPLTlOIBMAObZ.olIsNELnUN4kz.ZU/REWUyq', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (386199561, 'User 12', 'user-12@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$7xV30QfK6B4idOK.5Zrl5.8UTYec/KbleOxeMvoOuDK9Bozxl.jzC', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (537116830, 'User 13', 'user-13@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$YSjNo7EEW8HsoEUDOtw8qeHuRllpSw3bY/I7zslJP8flnhwkD9sM6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (1046959423, 'User 14', 'user-14@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$SizQ8sgaNqZoovydff4OSO3rTVD1MkcjG6P42eeq5QjXInNVvtHm6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (157312430, 'User 15', 'user-15@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$DOMnbwHioOJ..SG88cFjGO9Ws6uy1wed43hMdNLiA.Jp7uJ4UuXRu', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (275330066, 'User 16', 'user-16@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$6kWAJhUaRQ7UST0NSyjf.Ob0EQRh5NG6K6s25BbZiq.qemEW9CUKy', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (661521543, 'User 17', 'user-17@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$Wd8e/b/SmFq5vcNVbmBp9.xCcPOo2TyKcUKQJ6sd1DGn90fZapGwG', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (936450328, 'User 18', 'user-18@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$qBt7.obpoXGeV2SV7pKI1.WtajGP5bxj9U7iAGKwN1tw/dkGrttHm', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (14035331, 'User 19', 'user-19@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$qjIoOsVajywGADdzu3qkROQQmoCYuxy9SNOSqeG0n5VzUirHU0LvS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (304595689, 'User 20', 'user-20@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$pqdhfhkmpjaITCZP875emOclpvkw1Jhb/nqkZhkpSi3WyE7L41NbK', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (622916212, 'User 21', 'user-21@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$Q44guWig4xX8CUheKj5z2eGIGYcoxmyxfy0X3TZBxH3TLNePU46t.', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (1009361868, 'User 22', 'user-22@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$uUCHFPNTgtIf.i/2gESz4e6PDwLvIHFIQD1tdvKPHVui6scABWwgq', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (187601757, 'User 23', 'user-23@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$FJ5DT945pzl2v6lml2djp.BNj.3sMfXZHWDhTDS/urO7VlQp4xI6y', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (357172992, 'User 24', 'user-24@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$SVm6DWcwDkXOvt/Q/aPap.xsnExeisRFcx1ZSLYLTqsl6T4mgHfz2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (575485547, 'User 25', 'user-25@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$7q4Jz1kElAiHN7ObBIqPEuaRY5EGrhAR7Z5uBj/U7x/ZzezFfqC26', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (994338771, 'User 26', 'user-26@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$z0sSxO.WZ1fkkqzEnJ5.termU7.JVDKHwN37pVZWa1O4D3orrvJFa', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (205739844, 'User 27', 'user-27@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$kKVvtOeQXs3mz0He8zJvE.YACDTEHKcwDB6JF7mBE8ePcqNs8AM3K', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (486296279, 'User 28', 'user-28@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$4yBWgensJFUotMSc8a.UY.plD6nbIeh8giSLwpxFPaSEpU.UueDW6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT), (737901126, 'User 29', 'user-29@example.com', '2022-10-26 13:21:43.357226', '2022-10-26 13:21:43.357226', '$2a$04$6mZVeftB49I33btOxbQNjO0lB1EOZ.DKefoXqyzqJV8ibnNARUCbS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:21:43', DEFAULT, DEFAULT)[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "microposts" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" ENABLE TRIGGER ALL;ALTER TABLE "relationships" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (39.3ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RelationshipTest: test_should_require_a_follower_id
+---------------------------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RelationshipTest: test_should_require_a_followed_id
+---------------------------------------------------
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2022-10-26 13:21:43.846358"], ["updated_at", "2022-10-26 13:21:43.846358"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", false], ["activation_digest", "$2a$04$/oPG1otDCvPMS4AinPcDE.XX0osZ/MyMY3S2winRR4qwHauUIRU6."], ["activated", false], ["activated_at", nil], ["reset_digest", nil], ["reset_sent_at", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+UserTest: test_should_follow_and_unfollow_a_user
+------------------------------------------------
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["follower_id", 762146111], ["id", 950961012], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRelationship Create (2.9ms)[0m  [1m[32mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 762146111], ["followed_id", 950961012], ["created_at", "2022-10-26 13:21:44.025028"], ["updated_at", "2022-10-26 13:21:44.025028"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["follower_id", 762146111], ["id", 950961012], ["LIMIT", 1]]
+  [1m[36mRelationship Load (0.5ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1 AND "relationships"."followed_id" = $2 LIMIT $3[0m  [["follower_id", 762146111], ["followed_id", 950961012], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRelationship Destroy (0.5ms)[0m  [1m[31mDELETE FROM "relationships" WHERE "relationships"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["follower_id", 762146111], ["id", 950961012], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------
+UserTest: test_authenticated?_should_return_false_for_a_user_with_nil_digest
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "     "], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "microposts" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" DISABLE TRIGGER ALL;ALTER TABLE "relationships" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.0ms)[0m  [1m[31mDELETE FROM "microposts";
+DELETE FROM "relationships";
+DELETE FROM "users";
+INSERT INTO "microposts" ("id", "content", "user_id", "created_at", "updated_at", "picture") VALUES (499495288, 'I just ate an orange!', 762146111, '2022-10-26 13:14:21', '2022-10-26 13:24:24.002225', DEFAULT), (517500819, 'Check out the @tauday site by @mhartl: https://tauday.com', 762146111, '2019-10-26 13:24:21', '2022-10-26 13:24:24.002225', DEFAULT), (12348100, 'Sad cats are sad: https://youtu.be/PKffm2uI4dk', 762146111, '2022-10-26 11:24:21', '2022-10-26 13:24:24.002225', DEFAULT), (941832919, 'Writing a short test', 762146111, '2022-10-26 13:24:21', '2022-10-26 13:24:24.002225', DEFAULT), (177734013, 'Autem sed quaerat quia.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (1033843180, 'Iusto sapiente ratione praesentium.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (613834836, 'Itaque nostrum temporibus et.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (328290505, 'Quis quas facere autem.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (234210660, 'Ut ullam dolor sit.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (989001203, 'Exercitationem ex rerum quos.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (603694155, 'Blanditiis pariatur earum et.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (352097504, 'Dolor eaque ut cumque.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (71534927, 'Et blanditiis reprehenderit officia.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (860142042, 'Sapiente nobis in quasi.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (58620899, 'Et veniam et officiis.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (880364408, 'Consequatur nihil consectetur omnis.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (762321612, 'Labore totam officia qui.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (444017243, 'Mollitia sed fugiat dolorem.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (68403196, 'Quibusdam ut numquam delectus.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (856985457, 'Illo impedit omnis nihil.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (706600661, 'Dolorem vel quis libero.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (488304196, 'Reprehenderit quas officiis rerum.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (228979669, 'Iste consectetur aliquid nihil.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (983745350, 'Sed earum magni omnis.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (676538406, 'Repellat nulla magni maiores.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (525605047, 'Consequatur dolorum id corrupti.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (106776847, 'Sed sint iure nostrum.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (828012954, 'Dolor eaque molestiae deserunt.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (792652861, 'Excepturi est quos omnis.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (406445230, 'Corporis nostrum aut aut.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (19959062, 'Omnis quod quae modi.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (909622657, 'Autem quo odio et.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (646488084, 'Perspiciatis rerum repellat rem.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (294621321, 'Velit quis enim ut.', 762146111, '2022-09-14 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (583546149, 'Oh, is that what you want? Because that''s how you get ants!', 950961012, '2020-10-26 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (552321033, 'Danger zone!', 950961012, '2022-10-23 13:24:23', '2022-10-26 13:24:24.002225', DEFAULT), (3454773, 'I''m sorry. Your words made sense, but your sarcastic tone did not.', 409608538, '2022-10-26 13:14:23', '2022-10-26 13:24:24.002225', DEFAULT), (970054474, 'Dude, this van''s, like, rolling probable cause.', 409608538, '2022-10-26 09:24:23', '2022-10-26 13:24:24.002225', DEFAULT);
+INSERT INTO "users" ("id", "name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES (762146111, 'Michael Example', 'michael@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$j5W1GaPwOuVfYri3DTqUouxTjXGkGqepD0JSmxlHlFHRwoTOdGQR6', DEFAULT, TRUE, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (950961012, 'Sterling Archer', 'duchess@example.gov', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$8sWf1jlBJCoNqs.XGwt9i.mUkTglDU7/bBh0gHgMC98iWG2JY8f6C', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (409608538, 'Lana Kane', 'hands@example.gov', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$gmLnwCIfznJFQx30JcVIu.ImyBnqEuqj.uyVa08t3hF3n4yAS3IwK', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (659682706, 'Malory Archer', 'boss@example.gov', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$CvQdgp/31oc/7BJ04q6FYOtelLFOMGEc44twhAdnOcDUBrBNQ.nfG', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (338193910, 'User 0', 'user-0@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$ZoM/D5QYH0yI4bK5m83DnOCYGHUmcJOOYaOQO1hIC3E6vjsuOPrGy', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (590306657, 'User 1', 'user-1@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$A3LuYyxgLP1gEq3wBS2UPOGUqLFvOPj/QRXOGWWwR368yCJvJBzFy', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (975572189, 'User 2', 'user-2@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$pYfES.WJZVfM.3F60/bXwefig8jHjrekbWYz.jLUKhvpm24YDw8Pa', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (220281934, 'User 3', 'user-3@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$eVQq3QyUzlSlFL0vQeetLOYIXvhz.Y9YUfvdWNeZ24B3cpsLvpXb2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (323332591, 'User 4', 'user-4@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$lclUcYunF9zksrtrz.zUvuK6vtQSGhltvAeog6K35zsUr1QSsIHou', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (608344442, 'User 5', 'user-5@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$Hr/KbAOw6DYJAB52Rj9fjO3zijZdsHPg0UTDHYO8OYD1J9bJjeWwW', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (1028376774, 'User 6', 'user-6@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$FBGq8nX6qykoGoMcNezK/O1A60Z3IlFz7ljX/4AAhxmegM/kkFXC6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (172816471, 'User 7', 'user-7@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$rhKZjmjJl8tTqrpes8deAeMBdwkggvCxIvy18nm4ncSM9kkqq1Dtm', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (452191684, 'User 8', 'user-8@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$aJcZ3.7hdFonopLvQbjJ1eDzujW/AI.MdshK3x7pI2S.yWFvAATgm', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (771020115, 'User 9', 'user-9@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$PKWnaTvGQu5LugY/klhgOu.1EwoG21r7s2Ta2aj9k6IPWOodUA3Su', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (956993830, 'User 10', 'user-10@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$99BTIhKx1HhSnILR.AdC9ei0ACNpsUQ5E7CSL8O43PZH8H2CVoXzC', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (235774389, 'User 11', 'user-11@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$AWcFrWaJhBE6RV0xtp1c4eM4SXcBSnq.wdBhuQ3hi5uwmyeP8kXcC', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (386199561, 'User 12', 'user-12@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$FO.sOfNpVYoUB8trRsy7S./xp1Kj9pGb1Hgj6BUJkQJdmhAEKUMM6', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (537116830, 'User 13', 'user-13@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$bxrANrrRzAo6xrnWN5ew7Oeaf47A.LRu.ZZr6oz9C.rTVC8anNCvS', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (1046959423, 'User 14', 'user-14@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$A/xcki0z9WvolMwThxN6meOUNvhhm6E2ReDbggRXtFJL3HH2GmAhC', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (157312430, 'User 15', 'user-15@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$z4cA6SYnynX/ZBUyQ3IaY.OunemOaJHhHvIqrasPRDemQ4mM4V0yu', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (275330066, 'User 16', 'user-16@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$EdxDTatdB6GfmQ/gjInpsOQjhz.qlCcDkQQgBTpjIN4EYfGk9pZIa', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (661521543, 'User 17', 'user-17@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$9yPdvYteM7AKpXMEOWmHweNBP1YGv/3zz0KFo.r4LFn3Y0n1DVS12', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (936450328, 'User 18', 'user-18@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$R54tZ7hkXBJMN6jwcUXgzu8k1ViYwbJ7L3FVb2fqvTUupn.wfG3Ry', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (14035331, 'User 19', 'user-19@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$p7XaoqfY80R5/jllLFURzeVf76P/gNouFAE0WeWThH4e3sfg1tu6C', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (304595689, 'User 20', 'user-20@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$PTfFgS1Ug072agdeDLzotOaRUUsDPz/EmJYSsrItjDNcBLaIcVtRq', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (622916212, 'User 21', 'user-21@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$w7Nkco.KQ7eEYpmcfPXcOeZSBW.JG4LiDLv4iM3KS00DxVX4J.8eK', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (1009361868, 'User 22', 'user-22@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$QLBhbMH32fsxbryqG4R9TeyN/DasotWlHLI0V2z9A/lD06Oy47fhG', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (187601757, 'User 23', 'user-23@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$5cVrflREveS4vVr1caq8YOWI5.U9mUolq1bpWRSgWt4l2aYSesCqC', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (357172992, 'User 24', 'user-24@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$zxoHlzFUZ9u0rICrviOreunzrkQw35wQEH5ITA.hGq9xS2aACDZeq', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (575485547, 'User 25', 'user-25@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$NX2N3BlHnJkVKKuAWTK.Ouca4M1nyzhNhYMarGUGKNEyArTntf4eK', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (994338771, 'User 26', 'user-26@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$OJwg5ffOtjSQzNrmjKM4ku3ltcyK2zCYg4R4tUaRuXuxOPA5.s/W2', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (205739844, 'User 27', 'user-27@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$tq732oEEbgFKLSMiCga8IeQ6sJ8.WoWaTcgFqm6RODHhwmpfrC4q.', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (486296279, 'User 28', 'user-28@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$0Dr.ld1I2fZuBHUYADXCReU9X16KcG4UfznBzGAcKW0/PiDCS0d.S', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT), (737901126, 'User 29', 'user-29@example.com', '2022-10-26 13:24:24.027952', '2022-10-26 13:24:24.027952', '$2a$04$KPKAok.7/icg.O1L/gLkR.B.WwTRLLXSpRoIUJSWMYoyDoV6WRIVe', DEFAULT, DEFAULT, DEFAULT, TRUE, '2022-10-26 13:24:23', DEFAULT, DEFAULT)[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "microposts" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" ENABLE TRIGGER ALL;ALTER TABLE "active_storage_variant_records" ENABLE TRIGGER ALL;ALTER TABLE "relationships" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (42.0ms)[0m  [1m[35mdo $$
+  declare r record;
+BEGIN
+FOR r IN (
+  SELECT FORMAT(
+    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+    constraint_name,
+    table_schema,
+    table_schema,
+    table_name,
+    constraint_name
+  ) AS constraint_check
+  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+)
+  LOOP
+    EXECUTE (r.constraint_check);
+  END LOOP;
+END;
+$$;
+[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RelationshipTest: test_should_require_a_follower_id
+---------------------------------------------------
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+RelationshipTest: test_should_require_a_followed_id
+---------------------------------------------------
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------
+UserTest: test_authenticated?_should_return_false_for_a_user_with_nil_digest
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "     "], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+UserTest: test_should_follow_and_unfollow_a_user
+------------------------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["follower_id", 762146111], ["id", 950961012], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRelationship Create (1.2ms)[0m  [1m[32mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["follower_id", 762146111], ["followed_id", 950961012], ["created_at", "2022-10-26 13:24:24.769498"], ["updated_at", "2022-10-26 13:24:24.769498"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["follower_id", 762146111], ["id", 950961012], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["followed_id", 950961012], ["id", 762146111], ["LIMIT", 1]]
+  [1m[36mRelationship Load (0.6ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1 AND "relationships"."followed_id" = $2 LIMIT $3[0m  [["follower_id", 762146111], ["followed_id", 950961012], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRelationship Destroy (0.7ms)[0m  [1m[31mDELETE FROM "relationships" WHERE "relationships"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["follower_id", 762146111], ["id", 950961012], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at", "reset_digest", "reset_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2022-10-26 13:24:24.813826"], ["updated_at", "2022-10-26 13:24:24.813826"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", false], ["activation_digest", "$2a$04$2UY21yPQs7fn2UEzxd0NVeLv9ApZfm8mclPRiu.2MJdabAyY6uhj2"], ["activated", false], ["activated_at", nil], ["reset_digest", nil], ["reset_sent_at", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
