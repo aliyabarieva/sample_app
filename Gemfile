@@ -16,6 +16,9 @@ gem 'turbolinks'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+
+gem 'mini_magick'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
