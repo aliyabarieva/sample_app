@@ -13,6 +13,9 @@ gem 'rails-controller-testing'
 gem 'bcrypt',               '3.1.18'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
